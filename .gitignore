@@ -1,0 +1,53 @@
+# phpstorm project files
+.idea
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+vendor/*
+!vendor/rea/
+
+# composer itself is not needed
+composer.phar
+/composer.lock
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
+#additional yii ignores
+web/assets/*
+!web/assets/.gitkeep
+runtime/*
+!runtime/.gitignore
+node_modules/
+node_modules/*
+/package-lock.json
+assets/js/dist/
+assets/js/vendors/
+files/*
+!files/.gitkeep
+!files/images/defaults/default.png
+web/images/defaults/
+credentials/rds-combined-ca-bundle.pem
+web/telus/root.pem
+web/telus/client.pem
+config/rds-combined-ca-bundle.pem
+web/telus/tlsrelay.properties
+web/log-test.json
+web/DHDRTEST.json
+credentials/client.pem
+/console.log
