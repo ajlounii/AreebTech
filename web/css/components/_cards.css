@@ -1,0 +1,27 @@
+.main-container {
+    /*max-width: 1200px;*/
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.card {
+    padding: inherit;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}

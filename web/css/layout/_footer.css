@@ -1,0 +1,23 @@
+.custom-footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.custom-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.custom-footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color var(--transition-speed);
+}
+
+.custom-footer a:hover {
+    color: var(--accent-color);
+}

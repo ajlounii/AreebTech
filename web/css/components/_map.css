@@ -1,0 +1,20 @@
+#map {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    height: 200px;
+    width: 100%;
+}
+
+.map-padding {
+    padding-left: 0;
+}
+
+.map-controls {
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.leaflet-top.leaflet-right {
+    margin-top: 60px;
+}

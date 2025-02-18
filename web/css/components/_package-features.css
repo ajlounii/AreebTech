@@ -1,0 +1,116 @@
+.package-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 columns */
+    grid-template-rows: auto auto auto; /* 3 rows */
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.feature-card {
+    position: relative;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.feature-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-card.selected {
+    border-color: var(--accent-color);
+}
+
+/* Example of an image background */
+.feature-card[data-package-value="restaurant"] {
+    background-image: url('../../images/restaurant.jpeg');
+}
+
+.feature-card[data-package-value="supermarket"] {
+    background-image: url('../../images/supermarket.jpeg');
+}
+
+.feature-card[data-package-value="hr"] {
+    background-image: url('../../images/hr.jpeg');
+}
+
+.feature-card[data-package-value="pharmacy"] {
+    background-image: url('../../images/pharmacy.jpeg');
+}
+
+.feature-card[data-package-value="shop"] {
+    background-image: url('../../images/shop.jpeg');
+}
+
+/* Red overlay pseudo-element */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-color);
+    opacity: 0; /* Hidden by default */
+    transition: opacity var(--transition-speed);
+    z-index: 0; /* Place it behind the content */
+}
+.feature-card .content {
+    position: sticky;
+    top: 45%;
+    z-index: 1;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all var(--transition-speed);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    color: var(--background-color);
+}
+
+.feature-card:hover .content {
+     transform: translateY(0);
+     opacity: 1;
+    align-content: center;
+ }
+
+.feature-card:hover::before {
+    opacity: 0.9;
+}
+
+.feature-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+.feature-card.selected {
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.feature-card h5 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    transform: translateY(10px);
+    transition: transform var(--transition-speed);
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transform: translateY(10px);
+    transition: transform var(--transition-speed) 0.1s;
+}
+
+.feature-card:hover h5,
+.feature-card:hover p {
+    transform: translateY(0);
+}
+

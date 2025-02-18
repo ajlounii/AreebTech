@@ -1,0 +1,442 @@
+/* ====================================================
+   Modern Minimal Style for Your Company System
+   ==================================================== */
+
+/* Root Variables */
+:root {
+    --primary-color: #2c3e50;      /* Dark blue-gray for header and primary accents */
+    --accent-color:  #e74c3c;      /* Bold accent (red) for highlights */
+    --background-color: #ecf0f1;   /* Light background */
+    --card-bg: #ffffff;           /* White for cards/panels */
+    --text-color: #34495e;        /* Dark gray for text */
+    --border-color: #bdc3c7;      /* Subtle border color */
+    --transition-speed: 0.3s;     /* Transition timing */
+    --header-height: 60px;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ----------------------------
+   Navbar
+----------------------------- */
+.navbar {
+    background-color: var(--primary-color);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.navbar .navbar-nav {
+    display: flex;
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color var(--transition-speed);
+}
+
+.navbar .navbar-nav a:hover,
+.navbar .navbar-nav a.active {
+    color: var(--accent-color);
+}
+
+.navbar .navbar-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed);
+}
+
+.navbar .navbar-nav a:hover::after,
+.navbar .navbar-nav a.active::after {
+    width: 100%;
+}
+
+/* ----------------------------
+   Main Container & Cards
+----------------------------- */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* ----------------------------
+   Step Progress Bar
+----------------------------- */
+.step-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.step-item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+}
+
+.step-item:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: -1;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: background-color var(--transition-speed);
+}
+
+.step-item.active .step-circle,
+.step-item.completed .step-circle {
+    background-color: var(--accent-color);
+}
+
+.step-title {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+/* ----------------------------
+   Form Steps
+----------------------------- */
+.form-step {
+    display: none;
+    animation: fadeIn var(--transition-speed);
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------------------------
+   Package Features
+----------------------------- */
+.package-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feature-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-card.selected {
+    border-color: var(--accent-color);
+}
+
+/* ----------------------------
+   Payment Methods
+----------------------------- */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.payment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.payment-card.selected {
+    border-color: var(--accent-color);
+}
+
+/* ----------------------------
+   Form Navigation Buttons
+----------------------------- */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--border-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Submit button (hidden until final step) */
+.submit-btn {
+    display: none;
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* ----------------------------
+   Loading Overlay
+----------------------------- */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-content {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.custom-footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.custom-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.custom-footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color var(--transition-speed);
+}
+
+.custom-footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('../images/hero.jpg') center center/cover no-repeat;
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('../images/hero.jpg') center center/cover no-repeat;
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* About Content Section */
+.about-content {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.about-image {
+    margin-bottom: 30px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.content-box {
+    padding: 20px;
+}
+
+.content-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.content-description,
+.content-conclusion {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.content-list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    color: #34495e;
+}
+
+.content-list li {
+    margin-bottom: 12px;
+}
+
+.content-list i {
+    color: #e74c3c;
+    margin-right: 10px;
+}
+
+.content-conclusion {
+    margin-top: 20px;
+}

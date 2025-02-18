@@ -1,0 +1,12 @@
+.form-step {
+    display: none;
+    animation: fadeIn var(--transition-speed);
+}
+
+.form-step.active {
+    display: block;
+}
+
+#company-form {
+    padding-top: 35px;
+}
